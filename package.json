@@ -3,6 +3,8 @@
     "dev": "npx tailwindcss -i tw.css -o style.css --watch"
   },
   "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10"
   }
 }
