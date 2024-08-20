@@ -63,10 +63,13 @@
       </nav>
     </header>
 
-    <main class="container mx-auto px-4">
-      <section>
+    <div class="flex">
+      <aside
+        id="leftAside"
+        class="sticky top-14 min-w-72 bg-gray-800 text-gray-200"
+      >
         <nav
-          class="grid grid-cols-2 gap-2 text-center font-medium text-gray-200 *:rounded *:bg-gray-800 *:p-4"
+          class="h-[calc(100vh-48px)] w-72 divide-y-2 divide-gray-900 overflow-auto *:block *:px-4 *:py-2"
         >
           <a href="accordions.html" class="hover:bg-rose-400">Accordions</a>
           <a href="alerts.html" class="hover:bg-rose-400">Alerts</a>
@@ -104,7 +107,9 @@
           <a href="timelines.html" class="hover:bg-rose-400">Timelines</a>
           <a href="tooltips.html" class="hover:bg-rose-400">Tooltips</a>
         </nav>
-      </section>
-    </main>
+      </aside>
+
+      <main class="container mx-auto px-4"></main>
+    </div>
   </body>
 </html>

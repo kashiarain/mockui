@@ -1,90 +1,418 @@
 <!doctype html>
 <html class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../custom.css" />
+    <script src="../main.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
-  <script src="../main.js" defer></script>
-</head>
+  <body class="bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+    <header class="sticky top-0 bg-gray-700 dark:bg-gray-900">
+      <nav
+        class="container mx-auto flex h-12 items-center justify-between px-4"
+      >
+        <a href="/" class="text-xl font-semibold text-gray-200">HashUI</a>
+        <div class="flex items-center justify-center gap-3">
+          <a
+            href="/components"
+            class="text-base font-medium text-cyan-400 dark:hover:text-cyan-500"
+          >
+            Components
+          </a>
+          <label
+            class="relative inline-block h-8 w-16 cursor-pointer text-base"
+          >
+            <span>
+              <svg
+                class="absolute right-1 top-1 z-10 size-6"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g class="fill-amber-400">
+                  <circle r="5" cy="12" cx="12"></circle>
+                  <path
+                    d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+            <span>
+              <svg
+                class="absolute left-1 top-1 z-10 size-6 fill-cyan-200"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+                ></path>
+              </svg>
+            </span>
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              class="peer size-0 opacity-0"
+            />
 
-<body class="text-gray-900 dark:text-gray-200 bg-gray-200 dark:bg-gray-900">
-  <header class="bg-gray-400 dark:bg-gray-900 border-b ">
-    <nav class="h-14 flex justify-between items-center px-4 container mx-auto">
-      <a href="/" class="text-2xl font-semibold">HashUI</a>
-      <div>
-        <a href="/components">Components</a>
-        <button id="mode" class=" py-1 font-semibold px-4 rounded-md ring-1 ring-current">Switch</button>
-      </div>
-    </nav>
-  </header>
+            <span
+              class="before:content-'' absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-cyan-500 transition before:absolute before:bottom-0.5 before:left-0.5 before:z-10 before:size-7 before:rounded-full before:bg-gray-200 before:transition peer-checked:bg-cyan-800 peer-checked:before:translate-x-8"
+            ></span>
+          </label>
+        </div>
+      </nav>
+    </header>
 
-  <main class="container mx-auto p-4">
-    <section class="ring-1 ring-current rounded">
-        <div class="bg-gray-950 h-12 flex rounded items-center px-3">
-            <h2 class="text-xl font-medium">Standard Buttons</h2>
-        </div>
-        <div class="p-3 flex flex-wrap no-underline items-start gap-2 *:font-medium *:text-base *:h-10 *:min-h-10 *:px-4 *:gap-2 *:inline-flex *:justify-center *:items-center *:cursor-pointer *:rounded *:shrink-0">
-            <button class="bg-white text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">Light</button>
-            <button class="bg-gray-950 text-gray-200 disabled:opacity-50 disabled:cursor-not-allowed">Dark</button>
-            <button class="bg-green-500 hover:bg-green-400 text-green-100 disabled:opacity-50 disabled:cursor-not-allowed">Success</button>
-            <button class="bg-rose-500 hover:bg-rose-400 text-rose-100 disabled:opacity-50 disabled:cursor-not-allowed">Error</button>
-            <button class="bg-yellow-500 hover:bg-yellow-400 text-yellow-100 disabled:opacity-50 disabled:cursor-not-allowed">Warning</button>
-            <button class="bg-sky-500 hover:bg-sky-400 text-sky-100 disabled:opacity-50 disabled:cursor-not-allowed">Info</button>
-        </div>        
-    </section>
-    <section class="ring-1 ring-current rounded">
-        <div class="bg-gray-950 h-12 flex rounded items-center px-3">
-            <h2 class="text-xl font-medium">Outline Buttons</h2>
-        </div>
-        <div class="p-3 flex flex-wrap no-underline items-start gap-2 *:font-medium *:text-base *:h-10 *:min-h-10 *:px-4 *:gap-2 *:inline-flex *:justify-center *:items-center *:cursor-pointer *:rounded *:shrink-0">
-            <button class="ring-1 ring-current text-white disabled:opacity-50 disabled:cursor-not-allowed">Light</button>
-            <button class="ring-1 ring-current text-gray-950 disabled:opacity-50 disabled:cursor-not-allowed">Dark</button>
-            <button class="ring-1 ring-current text-green-500 hover:bg-green-500 hover:text-green-100  disabled:opacity-50 disabled:cursor-not-allowed">Success</button>
-            <button class="ring-1 ring-current text-rose-500 hover:bg-rose-500 hover:text-rose-100 disabled:opacity-50 disabled:cursor-not-allowed">Error</button>
-            <button class="ring-1 ring-current text-yellow-500  disabled:opacity-50 disabled:cursor-not-allowed">Warning</button>
-            <button class="ring-1 ring-current text-sky-500  disabled:opacity-50 disabled:cursor-not-allowed">Info</button>
-        </div>        
-    </section>
-    <section class="ring-1 ring-current rounded">
-        <div class="bg-gray-950 h-12 flex rounded items-center px-3">
-            <h2 class="text-xl font-medium">Soft Buttons</h2>
-        </div>
-        <div class="p-3 flex flex-wrap no-underline items-start gap-2 *:font-medium *:text-base *:h-10 *:min-h-10 *:px-4 *:gap-2 *:inline-flex *:justify-center *:items-center *:cursor-pointer *:rounded *:shrink-0">
-            <button class="ring-1 ring-current text-green-500 bg-green-100   disabled:opacity-50 disabled:cursor-not-allowed">Success</button>
-            <button class="ring-1 ring-current text-rose-500 bg-rose-100  disabled:opacity-50 disabled:cursor-not-allowed">Error</button>
-            <button class="ring-1 ring-current text-yellow-500  disabled:opacity-50 disabled:cursor-not-allowed">Warning</button>
-            <button class="ring-1 ring-current text-sky-500  disabled:opacity-50 disabled:cursor-not-allowed">Info</button>
-        </div>        
-    </section>
-    <section class="ring-1 ring-current rounded">
-        <div class="bg-gray-950 h-12 flex rounded items-center px-3">
-            <h2 class="text-xl font-medium">Ghost Buttons</h2>
-        </div>
-        <div class="p-3 flex flex-wrap no-underline items-start gap-2 *:transition *:font-medium *:text-base *:h-10 *:min-h-10 *:px-4 *:gap-2 *:inline-flex *:justify-center *:items-center *:cursor-pointer *:rounded *:shrink-0">
-            <button class="text-green-500 hover:bg-green-100 disabled:opacity-50 disabled:cursor-not-allowed">Success</button>
-            <button class="text-rose-500 hover:bg-rose-100 disabled:opacity-50 disabled:cursor-not-allowed">Error</button>
-            <button class="text-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed">Warning</button>
-            <button class="text-sky-500 disabled:opacity-50 disabled:cursor-not-allowed">Info</button>
-        </div>        
-    </section>
-    <section class="ring-1 ring-current rounded">
-        <div class="bg-gray-950 h-12 flex rounded items-center px-3">
-            <h2 class="text-xl font-medium">Size Buttons</h2>
-        </div>
-        <div class="p-3 *:bg-gray-950 flex flex-col no-underline items-start gap-2 *:inline-flex *:justify-center *:items-center *:cursor-pointer *:rounded *:shrink-0">
-            <button class="h-6 min-h-6 px-2 gap-1 text-xs disabled:opacity-50 disabled:cursor-not-allowed">size xs</button>
-            <button class="h-8 min-h-8 px-3 gap-1.5 text-sm disabled:opacity-50 disabled:cursor-not-allowed">size sm</button>
-            <button class="h-10 min-h-10 px-4 gap-2 text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed" disabled>size md</button>
-            <button class="h-12 min-h-12 px-6 gap-3 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed">size lg</button>
-            <button class="h-14 min-h-14 px-8 gap-4 text-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed">size xl</button>
-            
-        </div>        
-    </section>
-  </main>
-  
+    <div class="flex">
+      <aside
+        id="leftAside"
+        class="sticky top-14 h-[calc(100vh-56px)] w-72 min-w-72 overflow-auto bg-gray-800 text-gray-200"
+      >
+        <nav class="divide-y-2 divide-gray-900 *:block *:px-4 *:py-2">
+          <a href="accordions.html" class="hover:bg-rose-400">Accordions</a>
+          <a href="alerts.html" class="hover:bg-rose-400">Alerts</a>
+          <a href="avatars.html" class="hover:bg-rose-400">Avatars</a>
+          <a href="badges.html" class="hover:bg-rose-400">Badges</a>
+          <a href="banners.html" class="hover:bg-rose-400">Banners</a>
+          <a href="bars.html" class="hover:bg-rose-400">Bars</a>
+          <a href="breadcrumbs.html" class="hover:bg-rose-400">Breadcrumbs</a>
+          <a href="buttons.html" class="hover:bg-rose-400">Buttons</a>
+          <a href="cards.html" class="hover:bg-rose-400">Cards</a>
+          <a href="carousels.html" class="hover:bg-rose-400">Carousels</a>
+          <a href="chats.html" class="hover:bg-rose-400">Chats</a>
+          <a href="charts.html" class="hover:bg-rose-400">Charts</a>
+          <a href="chips.html" class="hover:bg-rose-400">Chips</a>
+          <a href="collapse.html" class="hover:bg-rose-400">Collapse</a>
+          <a href="docks.html" class="hover:bg-rose-400">Docks</a>
+          <a href="dialogs.html" class="hover:bg-rose-400">Dialogs</a>
+          <a href="drawers.html" class="hover:bg-rose-400">Drawers</a>
+          <a href="dropdowns.html" class="hover:bg-rose-400">Dropdowns</a>
+          <a href="images.html" class="hover:bg-rose-400">Images</a>
+          <a href="knobs.html" class="hover:bg-rose-400">Knobs</a>
+          <a href="lists.html" class="hover:bg-rose-400">List & List Items</a>
+          <a href="pagination.html" class="hover:bg-rose-400">Pagination</a>
+          <a href="parallax.html" class="hover:bg-rose-400">Parallax</a>
+          <a href="progress.html" class="hover:bg-rose-400">Progress</a>
+          <a href="popovers.html" class="hover:bg-rose-400">Popovers</a>
+          <a href="ratings.html" class="hover:bg-rose-400">Ratings</a>
+          <a href="skeletons.html" class="hover:bg-rose-400">Skeletons</a>
+          <a href="spinners.html" class="hover:bg-rose-400">Spinners</a>
+          <a href="steppers.html" class="hover:bg-rose-400">Steppers</a>
+          <a href="swaps.html" class="hover:bg-rose-400">Swaps</a>
+          <a href="tables.html" class="hover:bg-rose-400">Tables</a>
+          <a href="tabs.html" class="hover:bg-rose-400">Tabs</a>
+          <a href="toasts.html" class="hover:bg-rose-400">Toasts</a>
+          <a href="timelines.html" class="hover:bg-rose-400">Timelines</a>
+          <a href="tooltips.html" class="hover:bg-rose-400">Tooltips</a>
+        </nav>
+      </aside>
+      <main class="container mx-auto space-y-2 p-4">
+        <!-- disabled:cursor-not-allowed disabled:opacity-75 -->
 
-</body>
+        <!-- Standard Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Standard Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-center text-base *:inline-flex *:h-10 *:min-h-10 *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:gap-2 *:rounded-lg *:px-4 *:font-medium *:transition"
+          >
+            <button class="bg-gray-100 text-gray-950 hover:bg-gray-300">
+              Light
+            </button>
+            <button class="bg-gray-500 text-gray-100 hover:bg-gray-600">
+              Gray
+            </button>
+            <button class="bg-gray-900 text-gray-100 hover:bg-gray-950">
+              Dark
+            </button>
 
+            <button class="bg-teal-500 text-teal-950 hover:bg-teal-600">
+              Success
+            </button>
+
+            <button class="bg-rose-500 text-rose-100 hover:bg-rose-600">
+              Error
+            </button>
+            <button class="bg-amber-500 text-amber-950 hover:bg-amber-600">
+              Warning
+            </button>
+
+            <button class="bg-cyan-500 text-cyan-950 hover:bg-cyan-600">
+              Info
+            </button>
+          </div>
+        </section>
+
+        <!-- Icon Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Icon Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-center text-base *:inline-flex *:h-10 *:min-h-10 *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:gap-2 *:rounded-lg *:px-4 *:font-medium *:transition"
+          >
+            <button class="bg-teal-500 text-gray-950 hover:bg-teal-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                class="size-6 fill-current"
+              >
+                <path
+                  d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                />
+              </svg>
+
+              Success
+            </button>
+            <button class="bg-rose-500 text-rose-100 hover:bg-rose-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                class="size-6 fill-current"
+              >
+                <path
+                  d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                />
+              </svg>
+              Error
+            </button>
+            <button class="bg-amber-500 text-gray-950 hover:bg-amber-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                class="size-6 fill-current"
+              >
+                <path
+                  d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"
+                />
+              </svg>
+              Warning
+            </button>
+            <button class="bg-cyan-500 text-gray-950 hover:bg-cyan-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                class="size-6 fill-current"
+              >
+                <path
+                  d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                />
+              </svg>
+              Info
+            </button>
+          </div>
+        </section>
+
+        <!-- Outline Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Outline Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-center text-base *:inline-flex *:h-10 *:min-h-10 *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:gap-2 *:rounded-md *:px-4 *:font-medium *:ring-1 *:ring-inset *:ring-current *:transition *:focus-visible:ring-2"
+          >
+            <button class="text-gray-300 hover:bg-gray-100 dark:text-white">
+              Light
+            </button>
+            <button class="text-gray-700 hover:bg-gray-300">Gray</button>
+            <button class="text-gray-900 hover:bg-gray-600">Dark</button>
+
+            <button
+              class="text-teal-500 hover:bg-teal-50 focus-visible:ring-teal-500 dark:text-teal-400 dark:hover:bg-teal-950 dark:focus-visible:ring-teal-400"
+            >
+              Success
+            </button>
+
+            <button
+              class="text-rose-500 hover:bg-rose-50 focus-visible:ring-rose-500 dark:text-rose-400 dark:hover:bg-rose-950 dark:focus-visible:ring-rose-400"
+            >
+              Error
+            </button>
+            <button
+              class="text-amber-500 hover:bg-amber-50 focus-visible:ring-amber-500 dark:text-amber-400 dark:hover:bg-amber-950 dark:focus-visible:ring-amber-400"
+            >
+              Warning
+            </button>
+            <button
+              class="text-cyan-500 hover:bg-cyan-50 focus-visible:ring-cyan-500 dark:text-cyan-400 dark:hover:bg-cyan-950 dark:focus-visible:ring-cyan-400"
+            >
+              Info
+            </button>
+          </div>
+        </section>
+        <!-- Subtle Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Subtle Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-center text-base *:inline-flex *:h-10 *:min-h-10 *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:gap-2 *:rounded-md *:px-4 *:font-medium *:ring-1 *:ring-inset *:ring-current *:transition *:focus-visible:ring-2"
+          >
+            <button
+              class="bg-teal-50 text-teal-500 hover:bg-teal-100 focus-visible:ring-teal-500 dark:bg-teal-950 dark:text-teal-400 dark:hover:bg-teal-900 dark:focus-visible:ring-teal-400"
+            >
+              Success
+            </button>
+
+            <button
+              class="bg-rose-50 text-rose-500 hover:bg-rose-100 focus-visible:ring-rose-500 dark:bg-rose-950 dark:text-rose-400 dark:hover:bg-rose-900 dark:focus-visible:ring-rose-400"
+            >
+              Error
+            </button>
+            <button
+              class="bg-amber-50 text-amber-500 hover:bg-amber-100 focus-visible:ring-amber-500 dark:bg-amber-950 dark:text-amber-400 dark:hover:bg-amber-900 dark:focus-visible:ring-amber-400"
+            >
+              Warning
+            </button>
+            <button
+              class="bg-cyan-50 text-cyan-500 hover:bg-cyan-100 focus-visible:ring-cyan-500 dark:bg-cyan-950 dark:text-cyan-400 dark:hover:bg-cyan-900 dark:focus-visible:ring-cyan-400"
+            >
+              Info
+            </button>
+          </div>
+        </section>
+        <!-- Soft Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Soft Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-center text-base *:inline-flex *:h-10 *:min-h-10 *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:gap-2 *:rounded *:px-4 *:font-medium *:transition"
+          >
+            <button
+              class="bg-teal-50 text-teal-500 hover:bg-teal-100 disabled:bg-amber-50 dark:bg-teal-950 dark:text-teal-400 dark:hover:bg-teal-900 dark:hover:text-teal-400 dark:disabled:bg-teal-950"
+            >
+              Success
+            </button>
+
+            <button
+              class="bg-rose-50 text-rose-500 hover:bg-rose-100 disabled:bg-amber-50 dark:bg-rose-950 dark:text-rose-400 dark:hover:bg-rose-900 dark:hover:text-rose-400 dark:disabled:bg-rose-950"
+            >
+              Error
+            </button>
+            <button
+              class="bg-amber-50 text-amber-500 hover:bg-amber-100 disabled:bg-amber-50 dark:bg-amber-950 dark:text-amber-400 dark:hover:bg-amber-900 dark:hover:text-amber-400 dark:disabled:bg-amber-950"
+            >
+              Warning
+            </button>
+            <button
+              class="bg-cyan-50 text-cyan-500 hover:bg-cyan-100 disabled:bg-amber-50 dark:bg-cyan-950 dark:text-cyan-400 dark:hover:bg-cyan-900 dark:hover:text-cyan-400 dark:disabled:bg-cyan-950"
+            >
+              Info
+            </button>
+          </div>
+        </section>
+        <!-- Ghost Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Ghost Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-center text-base *:inline-flex *:h-10 *:min-h-10 *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:gap-2 *:rounded *:px-4 *:font-medium *:transition"
+          >
+            <button
+              class="bg-transparent text-teal-500 hover:bg-teal-100 disabled:bg-amber-50 dark:bg-transparent dark:text-teal-400 dark:hover:bg-teal-900 dark:hover:text-teal-400 dark:disabled:bg-teal-950"
+            >
+              Success
+            </button>
+
+            <button
+              class="bg-transparent text-rose-500 hover:bg-rose-100 disabled:bg-amber-50 dark:bg-transparent dark:text-rose-400 dark:hover:bg-rose-900 dark:hover:text-rose-400 dark:disabled:bg-rose-950"
+            >
+              Error
+            </button>
+            <button
+              class="bg-transparent text-amber-500 hover:bg-amber-100 disabled:bg-amber-50 dark:bg-transparent dark:text-amber-400 dark:hover:bg-amber-900 dark:hover:text-amber-400 dark:disabled:bg-amber-950"
+            >
+              Warning
+            </button>
+            <button
+              class="bg-transparent text-cyan-500 hover:bg-cyan-100 disabled:bg-amber-50 dark:bg-transparent dark:text-cyan-400 dark:hover:bg-cyan-900 dark:hover:text-cyan-400 dark:disabled:bg-cyan-950"
+            >
+              Info
+            </button>
+          </div>
+        </section>
+
+        <!-- Sized Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Sized Buttons</h2>
+          </div>
+          <div
+            class="flex flex-col items-start gap-2 px-3 py-5 text-center text-gray-100 *:inline-flex *:shrink-0 *:cursor-pointer *:select-none *:flex-wrap *:items-center *:justify-center *:rounded *:bg-gray-900 *:font-semibold *:no-underline *:transition"
+          >
+            <button class="h-6 min-h-6 gap-1 px-2.5 text-xs">size xs</button>
+            <button class="h-8 min-h-8 gap-1.5 px-3 text-sm">size sm</button>
+            <button class="h-10 min-h-10 gap-2 px-4 text-base">size md</button>
+            <button class="h-12 min-h-12 gap-2.5 px-6 text-lg">size lg</button>
+            <button class="h-14 min-h-14 gap-3 px-8 text-xl">size xl</button>
+          </div>
+        </section>
+
+        <!-- Link Buttons -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Link Buttons</h2>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 px-3 py-5 text-base *:cursor-pointer *:select-none *:font-medium *:transition"
+          >
+            <button class="text-cyan-500 underline">Link</button>
+          </div>
+        </section>
+
+        <!-- Block Button -->
+        <section
+          class="rounded bg-gray-200 ring-1 ring-inset ring-gray-700 dark:bg-gray-800"
+        >
+          <div
+            class="flex h-12 items-center rounded-t bg-gray-400 px-3 dark:bg-gray-900"
+          >
+            <h2 class="text-2xl font-semibold">Block Button</h2>
+          </div>
+          <div class="px-3 py-5 text-center text-gray-100">
+            <button
+              class="inline-flex h-12 min-h-12 w-full min-w-64 shrink-0 cursor-pointer select-none flex-wrap items-center justify-center gap-2 rounded bg-gray-900 px-8 text-xl font-semibold no-underline transition"
+            >
+              Full Button
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
- 
