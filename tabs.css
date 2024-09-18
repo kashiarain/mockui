@@ -1,0 +1,15 @@
+.collapse:not(td):not(tr):not(colgroup) {
+    visibility: visible
+}
+
+.collapse {
+    transition: grid-template-rows 0.2s;
+}
+
+.collapse-content {
+    transition: visibility 0.2s;
+    transition: padding 0.2s ease-out,
+        background-color 0.2s ease-out;
+   
+}
+

@@ -1,113 +1,128 @@
 <!doctype html>
 <html class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../custom.css" />
-    <script src="../main.js" defer></script>
-  </head>
 
-  <body class="bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-gray-200">
-    <header class="sticky top-0 bg-gray-700 dark:bg-gray-900">
-      <nav
-        class="container mx-auto flex h-12 items-center justify-between px-4"
-      >
-        <a href="/" class="text-xl font-semibold text-gray-200">HashUI</a>
-        <div class="flex items-center justify-center gap-3">
-          <a
-            href="/components"
-            class="text-base font-medium text-cyan-400 dark:hover:text-cyan-500"
-          >
-            Components
-          </a>
-          <label
-            class="relative inline-block h-8 w-16 cursor-pointer text-base"
-          >
-            <span>
-              <svg
-                class="absolute right-1 top-1 z-10 size-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g class="fill-amber-400">
-                  <circle r="5" cy="12" cx="12"></circle>
-                  <path
-                    d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"
-                  ></path>
-                </g>
-              </svg>
-            </span>
-            <span>
-              <svg
-                class="absolute left-1 top-1 z-10 size-6 fill-cyan-200"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 384 512"
-              >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../custom.css" />
+  <script src="../main.js" defer></script>
+  <link rel="stylesheet" href="../tabs.css">
+</head>
+
+<body class="bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+  <header class="sticky top-0 bg-gray-700 dark:bg-gray-900">
+    <nav class="container mx-auto flex h-12 items-center justify-between px-4">
+      <a href="/" class="text-xl font-semibold text-gray-200">HashUI</a>
+      <div class="flex items-center justify-center gap-3">
+        <a href="/components" class="text-base font-medium text-cyan-400 dark:hover:text-cyan-500">
+          Components
+        </a>
+        <label class="relative inline-block h-8 w-16 cursor-pointer text-base">
+          <span>
+            <svg class="absolute right-1 top-1 z-10 size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g class="fill-amber-400">
+                <circle r="5" cy="12" cx="12"></circle>
                 <path
-                  d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
-                ></path>
-              </svg>
-            </span>
-            <input
-              type="checkbox"
-              id="theme-toggle"
-              class="peer size-0 opacity-0"
-            />
+                  d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                </path>
+              </g>
+            </svg>
+          </span>
+          <span>
+            <svg class="absolute left-1 top-1 z-10 size-6 fill-cyan-200" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512">
+              <path
+                d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+              </path>
+            </svg>
+          </span>
+          <input type="checkbox" id="theme-toggle" class="peer size-0 opacity-0" />
 
-            <span
-              class="before:content-'' absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-cyan-500 transition before:absolute before:bottom-0.5 before:left-0.5 before:z-10 before:size-7 before:rounded-full before:bg-gray-200 before:transition peer-checked:bg-cyan-800 peer-checked:before:translate-x-8"
-            ></span>
-          </label>
-        </div>
+          <span
+            class="before:content-'' absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-cyan-500 transition before:absolute before:bottom-0.5 before:left-0.5 before:z-10 before:size-7 before:rounded-full before:bg-gray-200 before:transition peer-checked:bg-cyan-800 peer-checked:before:translate-x-8"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <div class="flex">
+    <aside id="leftAside"
+      class="hidden sm:block sticky top-14 h-[calc(100vh-56px)] w-72 min-w-72 overflow-y-auto bg-gray-800 text-gray-200 will-change-scroll">
+      <nav class="divide-y-2 divide-gray-900 *:block *:px-4 *:py-2">
+        <a href="accordions.html" class="hover:bg-rose-400">Accordions</a>
+        <a href="alerts.html" class="hover:bg-rose-400">Alerts</a>
+        <a href="avatars.html" class="hover:bg-rose-400">Avatars</a>
+        <a href="badges.html" class="hover:bg-rose-400">Badges</a>
+        <a href="banners.html" class="hover:bg-rose-400">Banners</a>
+        <a href="bars.html" class="hover:bg-rose-400">Bars</a>
+        <a href="breadcrumbs.html" class="hover:bg-rose-400">Breadcrumbs</a>
+        <a href="buttons.html" class="hover:bg-rose-400">Buttons</a>
+        <a href="cards.html" class="hover:bg-rose-400">Cards</a>
+        <a href="carousels.html" class="hover:bg-rose-400">Carousels</a>
+        <a href="chats.html" class="hover:bg-rose-400">Chats</a>
+        <a href="charts.html" class="hover:bg-rose-400">Charts</a>
+        <a href="chips.html" class="hover:bg-rose-400">Chips</a>
+        <a href="collapse.html" class="hover:bg-rose-400">Collapse</a>
+        <a href="docks.html" class="hover:bg-rose-400">Docks</a>
+        <a href="dialogs.html" class="hover:bg-rose-400">Dialogs</a>
+        <a href="drawers.html" class="hover:bg-rose-400">Drawers</a>
+        <a href="dropdowns.html" class="hover:bg-rose-400">Dropdowns</a>
+        <a href="images.html" class="hover:bg-rose-400">Images</a>
+        <a href="knobs.html" class="hover:bg-rose-400">Knobs</a>
+        <a href="lists.html" class="hover:bg-rose-400">List & List Items</a>
+        <a href="pagination.html" class="hover:bg-rose-400">Pagination</a>
+        <a href="parallax.html" class="hover:bg-rose-400">Parallax</a>
+        <a href="progress.html" class="hover:bg-rose-400">Progress</a>
+        <a href="popovers.html" class="hover:bg-rose-400">Popovers</a>
+        <a href="ratings.html" class="hover:bg-rose-400">Ratings</a>
+        <a href="skeletons.html" class="hover:bg-rose-400">Skeletons</a>
+        <a href="spinners.html" class="hover:bg-rose-400">Spinners</a>
+        <a href="steppers.html" class="hover:bg-rose-400">Steppers</a>
+        <a href="swaps.html" class="hover:bg-rose-400">Swaps</a>
+        <a href="tables.html" class="hover:bg-rose-400">Tables</a>
+        <a href="tabs.html" class="hover:bg-rose-400">Tabs</a>
+        <a href="toasts.html" class="hover:bg-rose-400">Toasts</a>
+        <a href="timelines.html" class="hover:bg-rose-400">Timelines</a>
+        <a href="tooltips.html" class="hover:bg-rose-400">Tooltips</a>
       </nav>
-    </header>
+    </aside>
 
-    <div class="flex">
-      <aside
-        id="leftAside"
-        class="sticky top-14 h-[calc(100vh-56px)] w-72 min-w-72 overflow-y-auto bg-gray-800 text-gray-200 will-change-scroll"
-      >
-        <nav class="divide-y-2 divide-gray-900 *:block *:px-4 *:py-2">
-          <a href="accordions.html" class="hover:bg-rose-400">Accordions</a>
-          <a href="alerts.html" class="hover:bg-rose-400">Alerts</a>
-          <a href="avatars.html" class="hover:bg-rose-400">Avatars</a>
-          <a href="badges.html" class="hover:bg-rose-400">Badges</a>
-          <a href="banners.html" class="hover:bg-rose-400">Banners</a>
-          <a href="bars.html" class="hover:bg-rose-400">Bars</a>
-          <a href="breadcrumbs.html" class="hover:bg-rose-400">Breadcrumbs</a>
-          <a href="buttons.html" class="hover:bg-rose-400">Buttons</a>
-          <a href="cards.html" class="hover:bg-rose-400">Cards</a>
-          <a href="carousels.html" class="hover:bg-rose-400">Carousels</a>
-          <a href="chats.html" class="hover:bg-rose-400">Chats</a>
-          <a href="charts.html" class="hover:bg-rose-400">Charts</a>
-          <a href="chips.html" class="hover:bg-rose-400">Chips</a>
-          <a href="collapse.html" class="hover:bg-rose-400">Collapse</a>
-          <a href="docks.html" class="hover:bg-rose-400">Docks</a>
-          <a href="dialogs.html" class="hover:bg-rose-400">Dialogs</a>
-          <a href="drawers.html" class="hover:bg-rose-400">Drawers</a>
-          <a href="dropdowns.html" class="hover:bg-rose-400">Dropdowns</a>
-          <a href="images.html" class="hover:bg-rose-400">Images</a>
-          <a href="knobs.html" class="hover:bg-rose-400">Knobs</a>
-          <a href="lists.html" class="hover:bg-rose-400">List & List Items</a>
-          <a href="pagination.html" class="hover:bg-rose-400">Pagination</a>
-          <a href="parallax.html" class="hover:bg-rose-400">Parallax</a>
-          <a href="progress.html" class="hover:bg-rose-400">Progress</a>
-          <a href="popovers.html" class="hover:bg-rose-400">Popovers</a>
-          <a href="ratings.html" class="hover:bg-rose-400">Ratings</a>
-          <a href="skeletons.html" class="hover:bg-rose-400">Skeletons</a>
-          <a href="spinners.html" class="hover:bg-rose-400">Spinners</a>
-          <a href="steppers.html" class="hover:bg-rose-400">Steppers</a>
-          <a href="swaps.html" class="hover:bg-rose-400">Swaps</a>
-          <a href="tables.html" class="hover:bg-rose-400">Tables</a>
-          <a href="tabs.html" class="hover:bg-rose-400">Tabs</a>
-          <a href="toasts.html" class="hover:bg-rose-400">Toasts</a>
-          <a href="timelines.html" class="hover:bg-rose-400">Timelines</a>
-          <a href="tooltips.html" class="hover:bg-rose-400">Tooltips</a>
-        </nav>
-      </aside>
+    <main class="container mx-auto px-4">
+      <section>
 
-      <main class="container mx-auto px-4"></main>
-    </div>
-  </body>
+        <div
+          class="collapse grid-rows-[auto,_0fr] has-[:checked]:grid-rows-[auto,_1fr] rounded-2xl relative grid w-full overflow-hidden collapse-arrow join-item border-base-300 border">
+          <input type="checkbox" name="my-accordion-4" checked="checked"
+            class="peer col-start-1 row-start-1 appearance-none opacity-0" />
+          <div class="collapse-title text-xl font-medium col-start-1 row-start-1">Click to open</div>
+
+          <div
+            class="collapse-content invisible peer-checked:visible peer-checked:min-h-fit px-4 min-h-0 col-start-1 row-start-2">
+            <p>hello</p>
+          </div>
+        </div>
+        <div
+          class="collapse grid-rows-[auto,_0fr] has-[:checked]:grid-rows-[auto,_1fr] rounded-2xl relative grid w-full overflow-hidden collapse-arrow join-item border-base-300 border">
+          <input type="checkbox" name="my-accordion-4" class="col-start-1 row-start-1 appearance-none opacity-0" />
+          <div class="collapse-title text-xl font-medium col-start-1 row-start-1">Click to open</div>
+          <div
+            class="collapse-content invisible peer-checked:visible peer-checked:min-h-fit px-4 min-h-0 col-start-1 row-start-2">
+            <p>hello</p>
+          </div>
+        </div>
+        <div
+          class="collapse grid-rows-[auto,_0fr] has-[:checked]:grid-rows-[auto,_1fr] rounded-2xl relative grid w-full overflow-hidden collapse-arrow join-item border-base-300 border">
+          <input type="checkbox" name="my-accordion-4" class="col-start-1 row-start-1 appearance-none opacity-0" />
+          <div class="collapse-title text-xl font-medium col-start-1 row-start-1">Click to open</div>
+          <div
+            class="collapse-content invisible peer-checked:visible peer-checked:min-h-fit px-4 min-h-0 col-start-1 row-start-2">
+            <p>hello</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
 </html>
